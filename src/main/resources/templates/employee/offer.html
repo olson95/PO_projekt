@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperClip</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="employeeScript.js"></script>
+</head>
+<style>
+    #product1 .pro{
+        cursor: auto;
+    }
+</style>
+<body>
+<section id="header">
+    <a href="#">
+        <i class="fa fa-paperclip" class="logo"></i>
+    </a>
+    <h2>PaperClip</h2>
+    <div>
+        <ul id="navbar">
+            <li><i class="fa fa-user-circle-o" aria-hidden="true"></i> Samantha</li>
+            <li><a class="active" href="shop.html">Oferta</a></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+            <li id="menu-bars"><i class="fa fa-bars" aria-hidden="true"></i>
+                <ul>
+                    <li><a href="orders.html"><i class="fa fa-history" aria-hidden="true"></i>  Historia zamówień</a></li>
+                    <li><a href="myAccount.html"><i class="fa fa-user" aria-hidden="true"></i>  Moje konto</a></li>
+                    <li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i>  Moje punkty</a></li>
+                    <li><a href="#"><i class="fa fa-question" aria-hidden="true"></i>  Pomoc</a></li>
+                    <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>  Wyloguj</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</section>
+
+<section class="account-header">
+    <h2>Zarządzaj produktami</h2>
+</section>
+
+<section id="product1" class="section-p1">
+    <div class ="addProd">
+        <button onclick="window.location.href = 'addProduct.html'"><i class="fa fa-plus" ></i></button>
+        <h4> Dodaj produkt </h4>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>Pomyślnie usunięto produkt</p>
+            <button id="continueButton" onclick=" window.location.href ='offer.html'">OK</button>
+        </div>
+    </div>
+    <div class="pro-container">
+        <div class="pro">
+            <img src="../img/products/backpack.png">
+            <div class="des">
+                <span>ID: 123455</span><br>
+                <span>Ilość:    5</span>
+                <h5>Czarny plecak</h5>
+                <h4>50.00 zł</h4>
+            </div>
+            <div class="icons">
+                <a href="editProduct.html">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <i onclick="removeProduct()" class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="../img/products/backpack.png">
+            <div class="des">
+                <span>Ilość:    5</span>
+                <h5>Czarny plecak</h5>
+                <h4>50.00 zł</h4>
+            </div>
+            <div class="icons">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="../img/products/backpack.png">
+            <div class="des">
+                <span>Ilość:    5</span>
+                <h5>Czarny plecak</h5>
+                <h4>50.00 zł</h4>
+            </div>
+            <div class="icons">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="../img/products/backpack.png">
+            <div class="des">
+                <span>Ilość:    5</span>
+                <h5>Czarny plecak</h5>
+                <h4>50.00 zł</h4>
+            </div>
+            <div class="icons">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="../img/products/backpack.png">
+            <div class="des">
+                <span>Ilość:    5</span>
+                <h5>Czarny plecak</h5>
+                <h4>50.00 zł</h4>
+            </div>
+            <div class="icons">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="../img/products/backpack.png">
+            <div class="des">
+                <span>Ilość:    5</span>
+                <h5>Czarny plecak</h5>
+                <h4>50.00 zł</h4>
+            </div>
+            <div class="icons">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="../img/products/backpack.png">
+            <div class="des">
+                <span>Ilość:    5</span>
+                <h5>Czarny plecak</h5>
+                <h4>50.00 zł</h4>
+            </div>
+            <div class="icons">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="../img/products/backpack.png">
+            <div class="des">
+                <span>Ilość:    5</span>
+                <h5>Czarny plecak</h5>
+                <h4>50.00 zł</h4>
+            </div>
+            <div class="icons">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="employeeScript.js"></script>
+</body>
+
+</html>
