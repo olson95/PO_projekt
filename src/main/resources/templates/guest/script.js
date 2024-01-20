@@ -24,6 +24,7 @@ function sendMessage(){
 
 function cancelContact() {
     let name = document.getElementById("guestName").value;
+    let guestLastname = document.getElementById("guestLastname").value;
     let email = document.getElementById("guestEmail").value;
     let subject = document.getElementById("guestSubject").value;
     let message = document.getElementById("guestMessage").value;
@@ -33,6 +34,7 @@ function cancelContact() {
         window.location.href ='shop.html';
     } else {
         document.getElementById("guestName").value = name;
+        document.getElementById("guestLastname").value = guestLastname;
         document.getElementById("guestEmail").value = email;
         document.getElementById("guestSubject").value = subject;
         document.getElementById("guestMessage").value = message;
