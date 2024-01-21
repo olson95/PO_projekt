@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -46,7 +47,7 @@
 
 <section id="product1" class="section-p1">
     <div class ="addProd">
-        <button onclick="window.location.href = 'addProduct.html'"><i class="fa fa-plus" ></i></button>
+        <button><a href="/addProduct"><i class="fa fa-plus" ></i></a></button>
         <h4> Dodaj produkt </h4>
     </div>
     <div id="myModal" class="modal">
@@ -56,105 +57,25 @@
         </div>
     </div>
     <div class="pro-container">
-        <div class="pro">
+        <div class="pro" th:each="product : ${productList}">
+<!--        <div class="pro">-->
             <img src="../img/products/backpack.png">
             <div class="des">
-                <span>ID: 123455</span><br>
+                <span>th:text= "${product.getId()}"</span><br>
                 <span>Ilość:    5</span>
-                <h5>Czarny plecak</h5>
-                <h4>50.00 zł</h4>
+                <h5>th:text="${product.getName()}"</h5>
+                <h4>th:text="${product.getProce()}" 50.00 zł</h4>
             </div>
             <div class="icons">
-                <a href="editProduct.html">
+                <a th:href="@{/{productId}/editProduct(productId=${product.getId()})}">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
+                <a th:href="@{/product/remove(id=${product.id})}">
                 <i onclick="removeProduct()" class="fa fa-trash" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
-        <div class="pro">
-            <img src="../img/products/backpack.png">
-            <div class="des">
-                <span>Ilość:    5</span>
-                <h5>Czarny plecak</h5>
-                <h4>50.00 zł</h4>
-            </div>
-            <div class="icons">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="pro">
-            <img src="../img/products/backpack.png">
-            <div class="des">
-                <span>Ilość:    5</span>
-                <h5>Czarny plecak</h5>
-                <h4>50.00 zł</h4>
-            </div>
-            <div class="icons">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="pro">
-            <img src="../img/products/backpack.png">
-            <div class="des">
-                <span>Ilość:    5</span>
-                <h5>Czarny plecak</h5>
-                <h4>50.00 zł</h4>
-            </div>
-            <div class="icons">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="pro">
-            <img src="../img/products/backpack.png">
-            <div class="des">
-                <span>Ilość:    5</span>
-                <h5>Czarny plecak</h5>
-                <h4>50.00 zł</h4>
-            </div>
-            <div class="icons">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="pro">
-            <img src="../img/products/backpack.png">
-            <div class="des">
-                <span>Ilość:    5</span>
-                <h5>Czarny plecak</h5>
-                <h4>50.00 zł</h4>
-            </div>
-            <div class="icons">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="pro">
-            <img src="../img/products/backpack.png">
-            <div class="des">
-                <span>Ilość:    5</span>
-                <h5>Czarny plecak</h5>
-                <h4>50.00 zł</h4>
-            </div>
-            <div class="icons">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="pro">
-            <img src="../img/products/backpack.png">
-            <div class="des">
-                <span>Ilość:    5</span>
-                <h5>Czarny plecak</h5>
-                <h4>50.00 zł</h4>
-            </div>
-            <div class="icons">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
-        </div>
+
     </div>
 </section>
 
