@@ -10,8 +10,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Getter
-@Setter
+//@Getter
+//@Setter
 @Table(name = "categories")
 public class Category {
     @Id
@@ -22,8 +22,6 @@ public class Category {
     @NotBlank(message = "Name cannot be empty")
     @Column(name = "name", nullable = false, unique = true)
     private String name;
-
-
 
 
 }

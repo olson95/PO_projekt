@@ -10,21 +10,15 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-@Table(name = "offers")
-public class Offer {
+@Table(name = "dev_statuses")
+public class DevStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "QuantityInStock", nullable = false)
-    private int quantityInStock;
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
 
-    @Column(name = "discount")
-    private double discount;
-
-    @OneToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
 }

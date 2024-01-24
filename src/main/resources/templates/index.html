@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PaperClip</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" th:href="@{../css/style.css}">
+    </head>
+
+    <body>
+    <section id="header">
+        <a href="#">
+            <i class="fa fa-paperclip logo"></i>
+        </a>
+        <h2>PaperClip</h2>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="#">Strona główna</a></li>
+                <li><a href="/shop">Oferta</a></li>
+                <li><a href="/contact">Pomoc</a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a></li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="hero">
+        <h4>Witamy w naszym sklepie</h4>
+        <h2>Najlepszy sklep papierniczy</h2>
+        <h1>we  Wrocławiu </h1>
+        <button onclick="window.location.href='/shop'">Przejdź do oferty</button>
+    </section>
+
+
+
+        <script src="script.js"></script>
+    </body>
+
+</html>

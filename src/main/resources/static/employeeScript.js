@@ -8,9 +8,9 @@ function cancelFunction() {
 
     let text = "Czy na pewno chcesz anulować?\n";
     if (confirm(text) == true) {
-        window.location.href='offer.html';
+        window.location.href='/offer';
     } else {
-       document.getElementById("productName").value = productName;
+        document.getElementById("productName").value = productName;
         document.getElementById("imagePath").value = imagePath;
         document.getElementById("quantity").value = quantity;
         document.getElementById("price").value = price;
@@ -25,6 +25,7 @@ function saveFunction(){
     let quantity = document.getElementById("quantity").value;
     let price = document.getElementById("price").value;
     let description = document.getElementById("description").value;
+    let producer = document.getElementById("producer").value;
     if (productName.trim() === "") {
         alert("Proszę podać nazwę produktu.");
         return;
@@ -46,25 +47,30 @@ function saveFunction(){
         return;
     }
 
+    if (producer.trim() === "") {
+        alert("Proszę wprowadzić producenta");
+        return;
+    }
 
-    const modal = document.getElementById('myModal');
+
+    const modal = document.getElementById('addModal');
     modal.style.display = 'block';
 }
 
 function removeProduct(){
     let text = "Czy na pewno chcesz usunąć produkt?\n";
     if (confirm(text) == true) {
-        const modal = document.getElementById('myModal');
+        const modal = document.getElementById('cancelModal');
         modal.style.display = 'block';
     }
     else{
-        window.location.href='offer.html';
+        window.location.href='/offer';
     }
-    const modal = document.getElementById('myModal');
+    const modal = document.getElementById('cancelModal');
     modal.style.display = 'block';
 }
 
-function saveDev(){
+function validateDev(){
     let name = document.getElementById("name").value;
     let lastname = document.getElementById("lastname").value;
     let street = document.getElementById("street").value;
@@ -111,7 +117,7 @@ function saveDev(){
         return;
     }
 
-    const modal = document.getElementById('myModal');
+    const modal = document.getElementById('addDevModal');
     modal.style.display = 'block';
 }
 
@@ -127,7 +133,7 @@ function cancelDev(){
 
     let text = "Czy na pewno chcesz anulować?\n";
     if (confirm(text) == true) {
-        window.location.href='deliveries.html';
+        window.location.href='/deliveries';
     } else {
         document.getElementById("name").value = name;
         document.getElementById("lastname").value = lastname;
@@ -147,7 +153,7 @@ function removeDelivery(){
         modal.style.display = 'block';
     }
     else{
-        window.location.href='deliveries.html';
+        window.location.href='/deliveries';
     }
     const modal = document.getElementById('myModal');
     modal.style.display = 'block';

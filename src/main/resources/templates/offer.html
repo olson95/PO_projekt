@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperClip</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/employeeScript.js"></script>
+    <style>
+        #product1 .pro {
+            cursor: auto;
+        }
+
+         #product1 .pro .des span  {
+             color: #088178;
+         }
+    </style>
+</head>
+
+<body>
+<section id="header">
+    <a href="#">
+        <i class="fa fa-paperclip logo"></i>
+    </a>
+    <h2>PaperClip</h2>
+    <div>
+        <ul id="navbar">
+            <li><i class="fa fa-user-circle-o" aria-hidden="true"></i> Samantha</li>
+            <li><a class="active" href="/offer">Oferta</a></li>
+            <li><a  href="/deliveries">Dostawy</a></li>
+            <li id="menu-bars"><i class="fa fa-bars" aria-hidden="true"></i>
+
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="account-header">
+    <h2>Zarządzaj produktami</h2>
+</section>
+
+<section id="product1" class="section-p1">
+    <div class="addProd">
+        <button><a href="/addProduct"><i class="fa fa-plus"></i></a></button>
+        <h4> Dodaj produkt </h4>
+    </div>
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <p>Pomyślnie dodano produkt</p>
+            <button id ="addBtn" class="continueButton" onclick=" window.location.href = '/offer'">OK</button>
+        </div>
+    </div>
+    <div id="cancelModal" class="modal">
+        <div class="modal-content">
+            <p>Pomyślnie usunięto produkt</p>
+            <button id = "removeBtn" class="continueButton" onclick="window.location.href ='/offer'">OK</button>
+        </div>
+    </div>
+    <div class="pro-container">
+        <div class="pro" th:each="product : ${productList}">
+            <img th:src="@{'data:image/jpeg;base64,'+${product.generateBase64Image()}}" alt="product" class="...">
+            <div class="des">
+                <span th:text="${product.getId()}"></span><br>
+                <span>Ilość: <span th:text="${product.quantity}"></span></span>
+                <h5 th:text="${product.getName()}"></h5>
+                <h4>
+                    <span th:text="${product.price}"></span>
+                    zł
+                </h4>
+            </div>
+            <div class="icons">
+                <a  th:href="@{/{productId}/editProduct(productId=${product.getId()})}">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <a th:href="@{/remove(id=${product.id})}">
+                    <i onclick="removeProduct()" class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+
+</html>

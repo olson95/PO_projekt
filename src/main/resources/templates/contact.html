@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperClip</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<section id="header">
+    <a href="#">
+        <i class="fa fa-paperclip logo"></i>
+    </a>
+    <h2>PaperClip</h2>
+    <div>
+        <ul id="navbar">
+            <li><a href="/">Strona główna</a></li>
+            <li><a href="/shop">Oferta</a></li>
+<!--            <li><a href="shop.html">Moje konto</a></li>-->
+            <li><a class="active" href="/contact">Pomoc</a></li>
+            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a></li>
+        </ul>
+    </div>
+
+</section>
+
+<section class="account-header">
+    <h2>Skontaktuj się z nami!</h2>
+</section>
+
+<div id="sentInfo" class="modal">
+    <div class="modal-content">
+        <p>Pomyślnie wysłano zgłoszenie</p>
+        <button id="continueButton" onclick="window.location.href='/shop'">OK</button>
+    </div>
+</div>
+
+
+<section id="form-details">
+    <div class="form">
+        <div class="form-header">
+            <h2>Wypełnij formularz kontaktowy</h2>
+            <button onclick="cancelContact()" id="cancelButton" class="upper-right-button">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <form th:action="@{/contact}" th:object="${form}" method="post" onsubmit="return validateForm()">
+        <input id="guestName" th:field="*{name}" type="text" placeholder="Twoje imię" required>
+        <input id="guestLastname" th:field="*{lastname}" type="text" placeholder="Twoje nazwisko" required>
+        <input  id="guestEmail" th:field="*{email}" type="email" placeholder="Email" required>
+        <input  id="guestSubject" th:field="*{subject}" type="text" placeholder="Temat" required>
+        <textarea name=""  id="guestMessage" th:field="*{content}" cols="30" rows="10" placeholder="Twoja wiadomość" required></textarea>
+        <button  id="sendButton" type="submit" class="lower-right-button">Wyślij</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+<script src="/script.js"></script>
+</body>
+
+</html>

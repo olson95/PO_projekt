@@ -7,6 +7,7 @@ import com.example.po_projekt.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -30,6 +31,7 @@ public class FormService {
     public void addForm(Form form) {
 //        validateProduct(product);
         form.setId(nextId);
+        form.setDate(LocalDate.now());
         formRepository.save(form);
         nextId++;
     }

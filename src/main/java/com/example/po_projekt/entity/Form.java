@@ -33,15 +33,15 @@ public class Form {
     private LocalDate date;
 
     @Column(name = "subject")
-    @Max(255)
+//    @Max(255)
     private String subject;
 
     @Column(name = "content", nullable = false)
-    @Max(255)
+//    @Max(255)
     private String content;
 
     @Column(name = "response")
-    @Max(255)
+//    @Max(255)
     private String response;
 
 

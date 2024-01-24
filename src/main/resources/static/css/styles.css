@@ -100,7 +100,7 @@ body {
 }
 
 #hero{
-    background-image: url("../img/hero4.png");
+    /*background-image: url("../img/hero4.png");*/
     height: 80vh;
     width: 100%;
     background-position: top 25% right 0;
@@ -121,7 +121,7 @@ body {
 }
 
 #hero button{
-    background-image: url("../img/button.png");
+    /*background-image: url("../img/button.png");*/
     background-color: transparent;
     color: #088178;
     border: 0;
@@ -227,7 +227,7 @@ body {
 }
 
 #page-header{
-    background-image: url("../img/banner/stationery.png");
+    /*background-image: url("../img/banner/stationery.png");*/
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -462,7 +462,7 @@ body {
     text-align: center;
 }
 
-#continueButton {
+.continueButton {
     padding: 10px 20px;
     margin-top: 10px;
     cursor: pointer;
@@ -474,7 +474,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-#continueButton:hover {
+.continueButton:hover {
     background-color: #b3b3ff;
 }
 
@@ -652,7 +652,8 @@ select {
 
 .button-group button.save {
     position: absolute;
-    top: 0;
+    /*top: 0;*/
+    bottom: 30px;
     right: 0; /* Przesuwa przycisk "Anuluj" w prawy górny róg */
     background-color: #ccccff;
     color: #fff;
@@ -662,7 +663,7 @@ select {
 
 .button-group button.cancel {
     position: absolute;
-    bottom: 0;
+    bottom: 55px;
     right: 0; /* Przesuwa przycisk "Zapisz" w prawy dolny róg */
     background-color: #ccccff;
     color: #fff;
@@ -726,4 +727,13 @@ select {
 .devButtons button {
     margin-right: 10px;
     font-size: 15px/* Lub dowolna wartość odstępu, którą chcesz mieć między przyciskami */
+}
+
+#saveBtn{
+    bottom: -50px;
+}
+
+#cancelBtn{
+
+    /*top: -50px;*/
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperClip</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <link rel="stylesheet" th:href="@{../css/style.css}">
+
+</head>
+
+<body>
+<section id="header">
+    <a href="#">
+        <i class="fa fa-paperclip logo"></i>
+    </a>
+    <h2>PaperClip</h2>
+    <div>
+        <ul id="navbar">
+            <li><a href="/">Strona główna</a></li>
+            <li><a class="active" href="/shop">Oferta</a></li>
+            <li><a href="/contact">Pomoc</a></li>
+            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a></li>
+        </ul>
+    </div>
+
+</section>
+
+<section class="account-header">
+    <h2>Szczegóły produktu</h2>
+</section>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>Dodano produkt do koszyka</p>
+        <button id="continueButton" onclick=" window.location.href = '/shop'">Kontynuuj zakupy</button>
+    </div>
+</div>
+
+<section id="prodetails" class="section-p1" >
+    <div class="single-pro-image" th:object="${product}">
+        <img th:src="@{'data:image/jpeg;base64,'+${product.generateBase64Image()}}" width="100%" alt="product" class="...">
+<!--        <img th:src="@{${product.getImage()}}" width="100%" id="MainImg">-->
+    </div>
+    <div class="single-pro-details">
+        <h4 th:text="*{product.name}"></h4>
+        <h2>
+            <span th:text="${product.price}"></span>
+            zł
+        </h2>
+
+<!--        <h2 th:text="*{product.price}">  zł</h2>-->
+        <input id="prodQuantity" type="number" min="1" value="1" th:max="${product.quantity}" oninput="validateQuantity()" />
+        <button onclick="addToCart()">Dodaj do koszyka</button>
+        <h4>Opis produktu</h4>
+        <span th:text="*{product.description}"></span>
+        <br><br><h5>Producent</h5>
+        <span th:text="*{product.producer}"></span>
+    </div>
+</section>
+
+
+
+
+<script src="/script.js"></script>
+</body>
+
+</html>
